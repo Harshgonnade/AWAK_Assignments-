@@ -1,73 +1,95 @@
-/* General Styling */
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2d1b4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #c3c3e7;
+    font-family: Arial, sans-serif;
 }
 
-/* Container */
+/* Container for the login form */
 .login-container {
-    background: #f1cece;
-    padding: 40px;
+    background: #9cb5e0;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
+    width: 90%;
 }
 
-/* Form Styling */
+/* Form header */
 h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
 }
 
+/* Form group styling */
 .form-group {
     margin-bottom: 15px;
 }
 
-label {
-    display: block;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-input {
+/* Input fields styling */
+input[type="text"],
+input[type="password"] {
     width: 100%;
-    padding: 10px 2px;
-    margin: 5px 0 10px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 14px;
 }
 
+/* Button styling */
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
 }
 
+/* Error message styling */
 .error-message {
     color: red;
     font-size: 12px;
-    display: none;
+    margin-top: 5px;
 }
 
-/* Responsive Media Query */
+/* Spinner styles */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive design */
 @media (max-width: 600px) {
     .login-container {
-        padding: 15px;
         width: 95%;
     }
 }
