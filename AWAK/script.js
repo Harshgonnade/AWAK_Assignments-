@@ -34,6 +34,10 @@ document.getElementById('login-form').addEventListener('submit', async function 
 
     if (!isValid) return;
 
+    // Show spinner and disable the form
+    const spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'block';
+
     // Show loading feedback
     // If you enter a valid user id and password then it will shows a loading feedback.
     // After that it will shows a success or failure message.
@@ -46,6 +50,8 @@ document.getElementById('login-form').addEventListener('submit', async function 
             body: JSON.stringify({ username, password })
         });
 
+        spinner.style.display = 'none'; // Hide spinner
+
         if (response.ok) {
             document.getElementById('form-feedback').textContent = 'Login successful..........!';
         } else {
@@ -55,3 +61,11 @@ document.getElementById('login-form').addEventListener('submit', async function 
         document.getElementById('form-feedback').textContent = 'An error occurred. Please try again.';
     }
 });
+
+// Show/Hide Password functionality
+document.getElementById('show-password').addEventListener('change', function () {
+    const passwordInput = document.getElementById('password');
+    passwordInput.type = this.checked ? 'text' : 'password';
+});
+
+
