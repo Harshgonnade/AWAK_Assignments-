@@ -11,18 +11,31 @@
     <div class="login-container">
         <form id="login-form">
             <h2>Login</h2>
+
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your email" required>
                 <span class="error-message" id="username-error"></span>
             </div>
+
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 <span class="error-message" id="password-error"></span>
             </div>
+            
+            <div class="form-group">
+                <input type="checkbox" id="show-password">
+                <label for="show-password">Show Password</label>
+            </div>
+
             <button type="submit">Login</button>
+
             <div class="form-feedback" id="form-feedback"></div>
+
+            <div class="spinner" id="loading-spinner" style="display: none;">
+            </div>
+
         </form>
     </div>
     <script src="script.js"></script>
